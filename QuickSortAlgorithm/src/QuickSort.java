@@ -27,6 +27,7 @@ public class QuickSort {
                 while (array[end] > pivot)
                     end--;
             }
+            //perform the swapping.
         }
         return null;
     }
