@@ -16,8 +16,18 @@ public class QuickSort {
 
     public List<int[]> partition(int[] array, int start, int end)
     {
+        //pivot for centering the array
+        int pivot = start;
 
+        while(start < end) {
+            while (start < array.length && end >= 0) {
+                while (array[start] < pivot)
+                    start++;
 
+                while (array[end] > pivot)
+                    end--;
+            }
+        }
         return null;
     }
 }
