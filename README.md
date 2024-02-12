@@ -4,3 +4,4 @@
   <li><b>Day one :</b>  Quick Sort Algorithm</li> 
   <li><b>Day Two :</b>  Merge Sort Algorithm</li>
 </ol>
+<hr />
