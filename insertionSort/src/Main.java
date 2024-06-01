@@ -23,8 +23,8 @@ public class Main {
                 start = mid+1;
             }
 
-            if(((arr[mid] > num) && arr[mid+1] > num) || arr[mid] == num){
-                insertionIndex = mid+1;
+            if(((arr[mid] > num) && !(arr[mid-1] > num)) || arr[mid] == num){
+                insertionIndex = mid-1;
                 break;
             }
 
