@@ -13,8 +13,6 @@ public class Main {
         * */
         int len = arr.length-1, start = 0, mid = 0, insertionIndex;
 
-        System.out.println("here we are");
-
         while(start <= len) {
             mid = (start + len)/2;
 
@@ -27,8 +25,6 @@ public class Main {
                 len = mid -1;
             }
         }
-
-        System.out.println("\nmid = "+mid+"\nstart = "+start+"\nlen = "+len);
 
         return null;
     }
