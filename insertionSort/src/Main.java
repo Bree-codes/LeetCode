@@ -40,6 +40,7 @@ public class Main {
             arr[i] = arr[i-1];
         }
 
+        //inserting the number.
         arr[start] = num;
 
         return arr;
