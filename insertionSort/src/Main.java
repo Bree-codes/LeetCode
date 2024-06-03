@@ -3,9 +3,8 @@ public class Main {
 
         int[] arr = {23,26,27,28,29,29,29,30,31,37,48,50,0};
 
-        for(int i : insertionSort(arr, 29)){
-            System.out.print(i+"\t");
-        }
+        for(int i : insertionSort(arr, 29)) System.out.print(i+"\t");
+
     }
 
     public static int[] insertionSort(int[] arr, int num) {
@@ -20,25 +19,16 @@ public class Main {
         /* ++>  Time Complexity ==>O(log(n))<==*/
         while(start <= len) {
             mid = (start + len)/2;
-            if(num == arr[mid]){
-                break;
-            } else if(num > arr[mid]){
-                start = mid + 1;
-            }else if (num < arr[mid]){
-                len = mid -1;
-            }
+
+            if(num == arr[mid]) break;
+            else if(num > arr[mid]) start = mid + 1;
+            else if (num < arr[mid]) len = mid -1;
         }
 
-        if(arr[mid] == num)
-            start = mid;
-
-        System.out.println("start: " + start);
-        System.out.println("mid: " + mid);
+        if(arr[mid] == num) start = mid;
 
         //loop to create an empty slot for insertion of the number.
-        for(int i = arr.length-1; i >= start; i--){
-            arr[i] = arr[i-1];
-        }
+        for(int i = arr.length-1; i >= start; i--) arr[i] = arr[i-1];
 
         //inserting the number.
         arr[start] = num;
