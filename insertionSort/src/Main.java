@@ -13,7 +13,7 @@ public class Main {
         * ----> First, loop to find the position to insert the number.
         * ----> technique => binary search the position to insert the number.
         * */
-        int len = arr.length-2, start = 0, mid = 0, insertionIndex;
+        int len = arr.length-2, start = 0, mid = 0;
 
         //start gives us the position where to insert the number.
 
@@ -29,9 +29,9 @@ public class Main {
             }
         }
 
-        /*if(arr[mid] == num)
+        if(arr[mid] == num)
             start = mid;
-*/
+
         System.out.println("start: " + start);
         System.out.println("mid: " + mid);
 
