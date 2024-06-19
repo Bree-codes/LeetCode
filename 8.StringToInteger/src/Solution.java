@@ -1,34 +1,42 @@
-import java.util.regex.Pattern;
-
 public class Solution {
     public int myAtoi(String s) {
 
-        int k = 0,j=0, i;
-        char[] str = s.toCharArray();
-
-        if(str[0] == '-' || str[0] == '+')
-            ++k;
+        char[] chars = s.toCharArray();
+        int j =0,i;
+        char c = '+';
 
 
-        for (i = k; i < str.length; i++) {
-             j = k;
+        for (i = 0; i < chars.length; i++) {
 
-             if(str[i] == 0){
-                 ++j;
-                 ++i;
-                 continue;
-             }
-             if(str[i] ==1 ||str[i] ==2||str[i] ==3||str[i]==4||
-                     str[i] ==5 || str[i]==6||str[i] ==7 ||
-                     str[i] ==8 || str[i]== 9|| str[i] == ' '){
-                i++;
-            }else{
-                 break;
-             }
+            if((chars[i] == '-' || chars[i] == '+') && j == i) {
+                if(chars[i-1] != ' ')
+                    break;
+                c = chars[i];
+                ++j;
+                continue;
+            }
+
+            if((chars[i] == ' ' || chars[i] == '0') && j == i){
+                ++j;
+                continue;
+            }
+
+
+            if(!(chars[i] >= '0' && chars[i] <= '9'))
+                break;
+
         }
 
-        System.out.println(s.substring(j, i));
+        if(j == i)
+            return 0;
 
-        return 0;
+        try {
+            i = Integer.parseInt(c+s.substring(j, i));
+        }catch (NumberFormatException e){
+            if(c == '-') return -2147483648;
+            return 2147483647;
+        }
+
+        return i;
     }
 }
